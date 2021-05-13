@@ -1,21 +1,15 @@
-
 version: 2
 
-models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
-
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+sources:
+  - name: GDP_Growth
+    description: "Test description"
+    # database: inspiring-rite-311915
+    tables:
+      - name: RAW_GDP_Data
+        description: "Test table description"
+  - name: world_bank_global_population
+    database: bigquery-public-data
+    schema: world_bank_global_population
+    tables:
+      - name: population_by_country
+        description: "Table showing number of people in a country over time"
