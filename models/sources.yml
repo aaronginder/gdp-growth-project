@@ -5,7 +5,10 @@ sources:
     description: "Test description"
     tables:
       - name: T1_gdp_annual_growth
-        description: "Test table description"
+      - name: T1_country_population
+      - name: T2_country_population
+      - name: T2_gdp_growth
+      - name: T3_gdp_per_person_view
   - name: world_bank_global_population
     schema: world_bank_global_population
     database: bigquery-public-data

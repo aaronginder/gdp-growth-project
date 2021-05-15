@@ -25,18 +25,3 @@ clean-targets: # directories to be removed by `dbt clean`
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
-
-# In this example config, we tell dbt to build all models in the example/ directory
-# as tables. These settings can be overridden in the individual model files
-# using the `{{ config(...) }}` macro.
-models:
-    1_raw:
-        # Applies to all files under models/example/
-        sql:
-            materialized: table
-    2_curated:
-        sql:
-            materialized: table
-    3_output:
-        sql:
-            materialized: view

@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 WITH GDP_POPULATION AS (
   SELECT
     GDP.COUNTRY_NAME,
@@ -9,9 +11,9 @@ WITH GDP_POPULATION AS (
     GDP.CURRENCY,
     POP.POPULATION
   FROM
-    `inspiring-rite-311915.gdp_country_growth.T2_gdp_growth` GDP
+    {{ ref('T2_gdp_growth') }} GDP
   LEFT JOIN
-    `inspiring-rite-311915.gdp_country_growth.T2_country_population` POP
+    {{ ref('T2_country_population') }} POP
   ON
     GDP.COUNTRY_CODE = POP.COUNTRY_CODE
     AND GDP.YEAR = POP.YEAR

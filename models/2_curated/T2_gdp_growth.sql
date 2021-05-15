@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 WITH unpivot_table AS (
     {{ dbt_utils.unpivot(
         relation=source('gdp_country_growth', 'T1_gdp_annual_growth'),
