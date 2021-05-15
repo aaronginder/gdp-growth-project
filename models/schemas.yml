@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: T2_country_population
+    description: example
+    columns:
+      - name: COUNTRY
+        description: "Name of the country"
+      - name: COUNTRY_CODE
+        description: "The 3 letter country code identifier"
+      - name: YEAR
+        description: "Year the population corresponds to"
+      - name: POPULATION
+        description: "Number of people in the population"

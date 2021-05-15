@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: gdp_country_growth
+    description: "Test description"
+    tables:
+      - name: T1_gdp_annual_growth
+        description: "Test table description"
+  - name: world_bank_global_population
+    schema: world_bank_global_population
+    database: bigquery-public-data
+    tables:
+      - name: population_by_country
+        description: "Table showing number of people in a country over time"

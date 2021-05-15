@@ -34,4 +34,9 @@ models:
         # Applies to all files under models/example/
         sql:
             materialized: table
-    
+    2_curated:
+        sql:
+            materialized: table
+    3_output:
+        sql:
+            materialized: view

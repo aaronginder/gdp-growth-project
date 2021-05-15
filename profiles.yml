@@ -1,0 +1,14 @@
+google_cloud:
+  target: "project"
+  outputs:
+    project:
+      type: bigquery
+      method: oauth
+      project: "{{ env_var('GCP_PROJECT') }}" # inspiring-rite-311915
+      dataset: " {{ env_var('GCP_DATASET') }}" # gdp_country_growth
+      threads: 2
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+      client_session_keep_alive: False
+      query_tag: "GDP_GROWTH_PER_CAPITA"
