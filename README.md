@@ -33,6 +33,9 @@ dbt is responsible for the orchestration of sql queries by abstracting the compl
 ### Introduction
 This repository is a good starting point for those just getting to grips with dbt. This repository shows configurations for the gdp_growth_project pipeline. The purpose of the pipeline is to bring together two tables in a format that calculates the GDP per person (yes, not the most exciting).
 
+This is the data flow diagram the pipeline builds:
+![dbt DAG](./assets/dbt-dag.JPG)
+
 ### **Instructions**
 Below guides you through using this repository to run a dbt pipeline in your Google Cloud Platform environment. All the instructions should be executed in your terminal.
 
@@ -45,6 +48,13 @@ Below guides you through using this repository to run a dbt pipeline in your Goo
 * Retrieve dbt_utils package by executing `dbt deps` in your terminal
 * Run the dbt pipeline by executing `. ./scripts/run_dbt.sh` - this will run the dbt pipeline & tests
 
+### **Generating dbt documentation**
+dbt generates documentation based on your SQL files and YAML configuration files. For example, generating detailed schemas based on the schema.yml file & generating a directed acyclic graph to show the data flow based on your SQL.
+
+1. Run `dbt docs generate --project-dir . --profiles-dir .` to create your documentation
+2. Navigate to the targets/index.html file. Either install HTML Preview extension (if using VS Code) or copy & paste the path into a browser
+#### **Example dbt docs**
+![Example dbt documentation](./assets/dbt-docs.JPG)
 ## **dbt Resources**
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
