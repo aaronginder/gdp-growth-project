@@ -1,86 +1,104 @@
 version: 2
 
 models:
-  - name: T1_gdp_annual_growth
-    description: example
-    columns:
-      - name: COUNTRY_NAME
-        tests:
-          - not null
-      - name: COUNTRY_CODE
-        tests:
-          - not null
-      - name: INDICATOR_NAME
-      - name: INDICATOR_CODE
   - name: T1_country_population
-    description: example
-    columns:
-      - name: COUNTRY
-        tests:
-          - not null
-      - name: COUNTRY_CODE
-        tests:
-          - not null
-  - name: T2_country_population
-    description: example
+    description: "A raw table of the country population derived from the BigQuery public dataset"
     columns:
       - name: COUNTRY
         description: "Name of the country"
         tests:
-          - not null
+          - not_null
       - name: COUNTRY_CODE
-        description: "The 3 letter country code identifier"
+        description: "Three letter code to identify the country"
+        tests:
+          - not_null
+          - check_country_code_regex
+
+  - name: T2_country_population
+    columns:
+      - name: COUNTRY
+        description: "Name of the country"
+        tests:
+          - not_null
+      - name: COUNTRY_CODE
+        description: "Three letter code to identify the country"
+        tests:
+          - not_null
+          - check_country_code_regex
       - name: YEAR
         description: "Year the population corresponds to"
       - name: POPULATION
         description: "Number of people in the population"
+
   - name: T2_gdp_growth
-    description: example
     columns:
       - name: COUNTRY_NAME
+        description: "Name of the country"
         tests:
-          - not null
+          - not_null
       - name: COUNTRY_CODE
+        description: "Three letter code to identify the country"
         tests:
-          - not null
+          - not_null
+          - check_country_code_regex
+          - relationships:
+              to: ref('T2_country_population')
+              field: country_code
       - name: INDICATOR_NAME
+        description: "Text identifier for the type of indicator (GDP)"
       - name: INDICATOR_CODE
+        description: "Code identifier for the type of indicator (GDP)"
       - name: YEAR
         tests:
-          - not null
+          - not_null
       - name: GDP_VALUE
         tests:
-          - not null
+          - not_null
       - name: CURRENCY
         tests:
-          - not null
-          # - accepted_values:
-          #   values: ["Dollars"]
+          - not_null
+          - accepted_values:
+              values: ["Dollars"]
+
   - name: T3_gdp_per_person_view
-    description: example
     columns:
       - name: COUNTRY_NAME
+        description: "Name of the country"
         tests:
-          - not null
+          - not_null
       - name: COUNTRY_CODE
+        description: "Three letter code to identify the country"
         tests:
-          - not null
+          - not_null
+          - check_country_code_regex
       - name: INDICATOR_NAME
+        description: "Text identifier for the type of indicator (GDP)"
       - name: INDICATOR_CODE
+        description: "Code identifier for the type of indicator (GDP)"
       - name: YEAR
         tests:
-          - not null
+          - not_null
       - name: GDP_VALUE
         tests:
-          - not null
+          - not_null
       - name: CURRENCY
         tests:
-          - not null
-          # - accepted_values:
-          #   values: ["Dollars"]
-      - name: POPULATION
+          - not_null
+          - accepted_values:
+              values: ["Dollars"]
+seeds:
+  - name: T1_gdp_annual_growth
+    columns:
+      - name: COUNTRY_NAME
+        description: "Name of the country"
         tests:
-          - not null
-      - name: GDP_PER_PERSON
+          - not_null
+      - name: COUNTRY_CODE
+        description: "Three letter code to identify the country"
         tests:
-          - not null
+          - not_null
+          - check_country_code_regex
+      - name: INDICATOR_NAME
+        description: "Text identifier for the type of indicator (GDP)"
+      - name: INDICATOR_CODE
+        description: "Code identifier for the type of indicator (GDP)"

@@ -6,7 +6,7 @@ google_cloud:
       method: oauth
       project: "{{ env_var('GCP_PROJECT') }}" # inspiring-rite-311915
       dataset: " {{ env_var('GCP_DATASET') }}" # gdp_country_growth
-      threads: 2
+      threads: 5
       timeout_seconds: 300
       location: US
       priority: interactive
