@@ -7,7 +7,7 @@ See the two simple sets below to using the dbt pipeline to generate tables in Bi
 
 ## **Navigation**
 
-# | Item| `Code`|
+\# | Item| `Code`|
 --- | --- | ---|
  1| [dbt SQL Scripts](https://github.com/aaronginder/gdp-growth-project/tree/master/scripts)| `N/A`
  2| [Executing the pipeline](https://github.com/aaronginder/gdp-growth-project/tree/master/scripts)| `dbt run --project-dir . --profiles-dir .`
@@ -49,7 +49,7 @@ Below guides you through using this repository to run a dbt pipeline in your Goo
 * Run the dbt pipeline by executing `. ./scripts/run_dbt.sh` - this will run the dbt pipeline & tests
 
 ### **Generating dbt documentation**
-dbt generates documentation based on your SQL files and YAML configuration files. For example, generating detailed schemas based on the schema.yml file & generating a directed acyclic graph to show the data flow based on your SQL.
+dbt generates documentation based on your SQL files and YAML configuration files. For example, generating detailed schemas based on the schema.yml file & generating a directed acyclic graph to show the data flow based on your SQL 
 
 1. Run `dbt docs generate --project-dir . --profiles-dir .` to create your documentation
 2. Navigate to the targets/index.html file. Either install HTML Preview extension (if using VS Code) or copy & paste the path into a browser
