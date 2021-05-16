@@ -1,14 +1,86 @@
 version: 2
 
 models:
+  - name: T1_gdp_annual_growth
+    description: example
+    columns:
+      - name: COUNTRY_NAME
+        tests:
+          - not null
+      - name: COUNTRY_CODE
+        tests:
+          - not null
+      - name: INDICATOR_NAME
+      - name: INDICATOR_CODE
+  - name: T1_country_population
+    description: example
+    columns:
+      - name: COUNTRY
+        tests:
+          - not null
+      - name: COUNTRY_CODE
+        tests:
+          - not null
   - name: T2_country_population
     description: example
     columns:
       - name: COUNTRY
         description: "Name of the country"
+        tests:
+          - not null
       - name: COUNTRY_CODE
         description: "The 3 letter country code identifier"
       - name: YEAR
         description: "Year the population corresponds to"
       - name: POPULATION
         description: "Number of people in the population"
+  - name: T2_gdp_growth
+    description: example
+    columns:
+      - name: COUNTRY_NAME
+        tests:
+          - not null
+      - name: COUNTRY_CODE
+        tests:
+          - not null
+      - name: INDICATOR_NAME
+      - name: INDICATOR_CODE
+      - name: YEAR
+        tests:
+          - not null
+      - name: GDP_VALUE
+        tests:
+          - not null
+      - name: CURRENCY
+        tests:
+          - not null
+          # - accepted_values:
+          #   values: ["Dollars"]
+  - name: T3_gdp_per_person_view
+    description: example
+    columns:
+      - name: COUNTRY_NAME
+        tests:
+          - not null
+      - name: COUNTRY_CODE
+        tests:
+          - not null
+      - name: INDICATOR_NAME
+      - name: INDICATOR_CODE
+      - name: YEAR
+        tests:
+          - not null
+      - name: GDP_VALUE
+        tests:
+          - not null
+      - name: CURRENCY
+        tests:
+          - not null
+          # - accepted_values:
+          #   values: ["Dollars"]
+      - name: POPULATION
+        tests:
+          - not null
+      - name: GDP_PER_PERSON
+        tests:
+          - not null
