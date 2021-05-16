@@ -9,7 +9,7 @@ See the two simple sets below to using the dbt pipeline to generate tables in Bi
 
 \# | Item| `Code`|
 --- | --- | ---|
- 1| [dbt SQL Scripts](https://github.com/aaronginder/gdp-growth-project/tree/master/scripts)| `N/A`
+ 1| [dbt SQL Scripts](https://github.com/aaronginder/gdp-growth-project/tree/master/models)| `N/A`
  2| [Executing the pipeline](https://github.com/aaronginder/gdp-growth-project/tree/master/scripts)| `dbt run --project-dir . --profiles-dir .`
  3| [dbt auto documentation](https://github.com/aaronginder/gdp-growth-project)| `dbt docs generate --project-dir . --profiles-dir .`
  4| [dbt container](https://github.com/aaronginder/gdp-growth-project/tree/master/containerisation)| `docker-compose up` / `docker compose-down`
