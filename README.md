@@ -1,10 +1,5 @@
 # **BigQuery Transformation dbt Data Pipeline**
 
-## **Purpose of Repository**
-To use dbt as an orchestration tool to process a static file and join two data sources together. This repository can be used as a template example of creating a dbt pipeline with testing.
-
-See the two simple sets below to using the dbt pipeline to generate tables in BigQuery (GCP).
-
 ## **Navigation**
 
 \# | Item| `Code`|
@@ -14,6 +9,11 @@ See the two simple sets below to using the dbt pipeline to generate tables in Bi
  3| [dbt auto documentation](https://github.com/aaronginder/gdp-growth-project)| `dbt docs generate --project-dir . --profiles-dir .`
  4| [dbt container](https://github.com/aaronginder/gdp-growth-project/tree/master/containerisation)| `docker-compose up` / `docker compose-down`
  5| [Custom macro test](https://github.com/aaronginder/gdp-growth-project/tree/master/macros)| `dbt test run --project-dir . --profiles-dir .`
+
+## **Purpose of Repository**
+To use dbt as an orchestration tool to process a static file and join two data sources together. This repository can be used as a template example of creating a dbt pipeline with testing.
+
+See the two simple sets below to using the dbt pipeline to generate tables in BigQuery (GCP).
 
 ## **Pre-requisites**
 To follow the instructions, you must have the following software installed:
