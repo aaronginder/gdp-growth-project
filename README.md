@@ -43,10 +43,10 @@ Below guides you through using this repository to run a dbt pipeline in your Goo
 * Clone this repository by running `git clone https://github.com/aaronginder/gdp-growth-project` in your terminal
 * Change into the repository directory `cd gdp-growth-project`
 * Install the packages required for this pipeline by executing `python -m pip install --upgrade pip && pip install -r requirements.txt`
-* Set up your environment by running `. scripts/set_up_env.sh` - creates various resources in GCP and sets environment variables for terminal session
+* Set up your environment by running `chmod +x scripts/set_up_env.sh` and then `. scripts/set_up_env.sh` - creates various resources in GCP and sets environment variables for terminal session
 
 #### **2. Run the dbt pipeline**
-* Retrieve dbt_utils package by executing `dbt deps` in your terminal
+* Retrieve dbt_utils package by executing `dbt deps --project-dir . --profiles-dir .` in your terminal
 * Run the dbt pipeline by executing `. ./scripts/run_dbt.sh` - this will run the dbt pipeline & tests
 
 ### **Generating dbt documentation**
